@@ -1,3 +1,5 @@
+#! /bin/bash
+
 ### Personal environment variables
 
 ### Path definitions.

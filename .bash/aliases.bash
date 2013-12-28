@@ -1,3 +1,5 @@
+#! /bin/bash
+
 verswitch () { 
     if [[ -z $1 ]]
     then
@@ -82,3 +84,27 @@ rscreen () { screen -r $1; }
 
 # List Screens.
 lsscreen () { screen -ls; }
+
+# Make a .tar.gz directory.
+# Usage: mktargz <source_dir> [archive[.tar.gz]]
+mktargz() { 
+    if [[ -z $1 ]]
+    then
+        echo "You must provide a directory to .tar.gz up."
+        return 1
+    fi
+    
+    local source_dir=${1%/}
+
+    if [[ -z $2 ]]
+    then
+        local archive="${source_dir}.tar.gz"
+    else
+        local archive="${2%.tar.gz}.tar.gz"
+    fi
+
+    echo "tar -f ${archive} -zcv ${source_dir}"
+    tar -f ${archive} -zcv ${source_dir}
+}
+
+untargz() { tar -zxvf $@; }

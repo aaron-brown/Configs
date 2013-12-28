@@ -227,15 +227,10 @@ export PS1
 
 # Use .bash/ directory structure to import my files.
 
-if [ -f ~/.bash/aliases.bash ]; then
-    . ~/.bash/aliases.bash
-fi
-
-if [ -f ~/.bash/aliases.bash ]; then
-    . ~/.bash/env.bash
-fi
+[[ -s "${HOME}/.bash/aliases.bash" ]] && . "${HOME}/.bash/aliases.bash"
+[[ -s "${HOME}/.bash/env.bash" ]] && . "${HOME}/.bash/env.bash"
 
 # According to GVM this has to be last.
-if [ -f ~/.bash/gvm.bash ]; then
+if [[ -s "${HOME}/.gvm/bin/gvm-init.sh" && -e ~/.bash/gvm.bash ]]; then
     . ~/.bash/gvm.bash
 fi
