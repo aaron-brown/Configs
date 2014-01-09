@@ -30,7 +30,7 @@ setup_bash () {
     then
         if [[ -e ${HOME}/.bashrc.bk ]]
         then
-            local backup_extension="-$(uuidgen).bk"
+            local backup_extension="-$(date +%F_%H-%M-%S).bk"
         else
             local backup_extension=".bk"
         fi
@@ -54,7 +54,7 @@ setup_git () {
     then
         if [[ -e ${HOME}/.gitconfig.bk ]]
         then
-            local backup_extension="-$(uuidgen).bk"
+            local backup_extension="-$(date +%F_%H-%M-%S).bk"
         else
             local backup_extension=".bk"
         fi
@@ -76,7 +76,7 @@ setup_vim () {
     then
         if [[ -e ${HOME}/.vimrc.bk ]]
         then
-            local backup_extension="-$(uuidgen).bk"
+            local backup_extension="-$(date +%F_%H-%M-%S).bk"
         else
             local backup_extension=".bk"
         fi
