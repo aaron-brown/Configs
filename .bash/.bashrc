@@ -1,5 +1,3 @@
-source '/usr/share/doc/git-1.8.1.4/contrib/completion/git-completion.bash'
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
